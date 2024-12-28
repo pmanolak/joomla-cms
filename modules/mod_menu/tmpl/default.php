@@ -20,7 +20,7 @@ $wa->registerAndUseScript('mod_menu', 'mod_menu/menu-es5.min.js', [], ['nomodule
 $id = '';
 
 if ($tagId = $params->get('tag_id', '')) {
-    $id = ' id="' . $tagId . '"';
+    $id = ' id="' . htmlspecialchars($tagId, ENT_QUOTES, 'UTF-8') . '"';
 }
 
 // The menu class is deprecated. Use mod-menu instead

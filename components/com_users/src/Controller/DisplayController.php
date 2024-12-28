@@ -10,9 +10,7 @@
 
 namespace Joomla\Component\Users\Site\Controller;
 
-use Joomla\CMS\Component\ComponentHelper;
 use Joomla\CMS\MVC\Controller\BaseController;
-use Joomla\CMS\Router\Route;
 
 // phpcs:disable PSR1.Files.SideEffects
 \defined('_JEXEC') or die;
@@ -51,60 +49,10 @@ class DisplayController extends BaseController
             // Do any specific processing by view.
             switch ($vName) {
                 case 'registration':
-                    // If the user is already logged in, redirect to the profile page.
-                    $user = $this->app->getIdentity();
-
-                    if ($user->get('guest') != 1) {
-                        // Redirect to profile page.
-                        $this->setRedirect(Route::_('index.php?option=com_users&view=profile', false));
-
-                        return;
-                    }
-
-                    // Check if user registration is enabled
-                    if (ComponentHelper::getParams('com_users')->get('allowUserRegistration') == 0) {
-                        // Registration is disabled - Redirect to login page.
-                        $this->setRedirect(Route::_('index.php?option=com_users&view=login', false));
-
-                        return;
-                    }
-
-                    // The user is a guest, load the registration model and show the registration page.
-                    $model = $this->getModel('Registration');
-                    break;
-
-                // Handle view specific models.
                 case 'profile':
-                    // If the user is a guest, redirect to the login page.
-                    $user = $this->app->getIdentity();
-
-                    if ($user->get('guest') == 1) {
-                        // Redirect to login page.
-                        $this->setRedirect(Route::_('index.php?option=com_users&view=login', false));
-
-                        return;
-                    }
-
-                    $model = $this->getModel($vName);
-                    break;
-
-                // Handle the default views.
                 case 'login':
-                    $model = $this->getModel($vName);
-                    break;
-
                 case 'remind':
                 case 'reset':
-                    // If the user is already logged in, redirect to the profile page.
-                    $user = $this->app->getIdentity();
-
-                    if ($user->get('guest') != 1) {
-                        // Redirect to profile page.
-                        $this->setRedirect(Route::_('index.php?option=com_users&view=profile', false));
-
-                        return;
-                    }
-
                     $model = $this->getModel($vName);
                     break;
 
@@ -115,8 +63,6 @@ class DisplayController extends BaseController
                     $task       = $this->input->get('task', '');
 
                     return $controller->execute($task);
-
-                    break;
 
                 default:
                     $model = $this->getModel('Login');
