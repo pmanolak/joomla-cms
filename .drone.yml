@@ -135,7 +135,7 @@ steps:
     environment:
       CYPRESS_VERIFY_TIMEOUT: 100000
     commands:
-      - mv cypress.config.dist.mjs cypress.config.mjs
+      - cp cypress.config.dist.mjs cypress.config.mjs
       - npx cypress install
       - npx cypress verify
 
@@ -433,6 +433,6 @@ trigger:
 
 ---
 kind: signature
-hmac: caca91b7aa40832a891260e03c42f8b7fc31b6971d201bf69291a87b158d5ce7
+hmac: fedcefde305c98f4dfc926b9039f83692827337da9e689e423c9de93a97248dd
 
 ...
