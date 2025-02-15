@@ -121,7 +121,7 @@ class StageModel extends AdminModel
 
             // Alter the title for save as copy
             if ($origTable->load(['title' => $data['title']])) {
-                list($title)   = $this->generateNewTitle(0, '', $data['title']);
+                [$title]       = $this->generateNewTitle(0, '', $data['title']);
                 $data['title'] = $title;
             }
 

@@ -219,9 +219,9 @@ class NewsfeedModel extends AdminModel
             $origTable->load($input->getInt('id'));
 
             if ($data['name'] == $origTable->name) {
-                list($name, $alias) = $this->generateNewTitle($data['catid'], $data['alias'], $data['name']);
-                $data['name']       = $name;
-                $data['alias']      = $alias;
+                [$name, $alias] = $this->generateNewTitle($data['catid'], $data['alias'], $data['name']);
+                $data['name']   = $name;
+                $data['alias']  = $alias;
             } else {
                 if ($data['alias'] == $origTable->alias) {
                     $data['alias'] = '';

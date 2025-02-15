@@ -745,9 +745,9 @@ class ArticleModel extends AdminModel implements WorkflowModelInterface
             }
 
             if ($data['title'] == $origTable->title) {
-                list($title, $alias) = $this->generateNewTitle($data['catid'], $data['alias'], $data['title']);
-                $data['title']       = $title;
-                $data['alias']       = $alias;
+                [$title, $alias] = $this->generateNewTitle($data['catid'], $data['alias'], $data['title']);
+                $data['title']   = $title;
+                $data['alias']   = $alias;
             } elseif ($data['alias'] == $origTable->alias) {
                 $data['alias'] = '';
             }
@@ -768,8 +768,8 @@ class ArticleModel extends AdminModel implements WorkflowModelInterface
                     $msg = Text::_('COM_CONTENT_SAVE_WARNING');
                 }
 
-                list($title, $alias) = $this->generateNewTitle($data['catid'], $data['alias'], $data['title']);
-                $data['alias']       = $alias;
+                [$title, $alias] = $this->generateNewTitle($data['catid'], $data['alias'], $data['title']);
+                $data['alias']   = $alias;
 
                 if (isset($msg)) {
                     $app->enqueueMessage($msg, 'warning');
