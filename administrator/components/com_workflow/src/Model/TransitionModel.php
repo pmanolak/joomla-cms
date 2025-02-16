@@ -156,7 +156,7 @@ class TransitionModel extends AdminModel
 
         // Make sure we use the correct workflow_id when editing an existing transition
         $key = $table->getKeyName();
-        $pk  = (isset($data[$key])) ? $data[$key] : (int) $this->getState($this->getName() . '.id');
+        $pk  = $data[$key] ?? (int) $this->getState($this->getName() . '.id');
 
         if ($pk > 0) {
             $table->load($pk);
