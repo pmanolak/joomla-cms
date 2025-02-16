@@ -959,7 +959,7 @@ class ApplicationModel extends FormModel implements MailerFactoryAwareInterface
                 /** @var Asset $parentAsset */
                 $parentAsset = Table::getInstance('Asset');
 
-                if (strpos($asset->name, '.') !== false) {
+                if (str_contains($asset->name, '.')) {
                     $assetParts = explode('.', $asset->name);
                     $parentAsset->loadByName($assetParts[0]);
                     $parentAssetId = $parentAsset->id;

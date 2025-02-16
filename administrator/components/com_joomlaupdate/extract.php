@@ -567,7 +567,7 @@ class ZIPExtraction
     public function setFilename(string $value)
     {
         // Security check: disallow remote filenames
-        if (!empty($value) && strpos($value, '://') !== false) {
+        if (!empty($value) && str_contains($value, '://')) {
             $this->setError('Invalid archive location');
 
             return;

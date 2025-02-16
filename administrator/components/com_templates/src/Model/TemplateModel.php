@@ -574,7 +574,7 @@ class TemplateModel extends FormModel
      */
     private function getSafeName($name)
     {
-        if (strpos($name, '-') !== false && preg_match('/[0-9]/', $name)) {
+        if (str_contains($name, '-') && preg_match('/[0-9]/', $name)) {
             // Get the extension
             $extension = File::getExt($name);
 
