@@ -1101,7 +1101,7 @@ class TemplateModel extends FormModel
                         $path = $folder . '/' . $view . '/tmpl';
 
                         // The new scheme, the views are directly in the component/tmpl folder
-                        if (!is_dir($path) && substr($folder, -4) == 'tmpl') {
+                        if (!is_dir($path) && str_ends_with($folder, 'tmpl')) {
                             $path = $folder . '/' . $view;
                         }
 

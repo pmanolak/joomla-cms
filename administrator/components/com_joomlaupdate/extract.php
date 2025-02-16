@@ -1316,7 +1316,7 @@ class ZIPExtraction
      */
     private function isIgnoredDirectory(string $shortFilename): bool
     {
-        $check = substr($shortFilename, -1) == '/' ? rtrim($shortFilename, '/') : \dirname($shortFilename);
+        $check = str_ends_with($shortFilename, '/') ? rtrim($shortFilename, '/') : \dirname($shortFilename);
 
         return \in_array($check, $this->ignoreDirectories);
     }
@@ -1375,7 +1375,7 @@ class ZIPExtraction
         }
 
         // Remove any trailing slash
-        if (substr($filename, -1) == '/') {
+        if (str_ends_with($filename, '/')) {
             $filename = substr($filename, 0, -1);
         }
 
