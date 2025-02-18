@@ -3,7 +3,7 @@ Joomla! CMS™
 1- Overview
 	* This is a Joomla! 5.x installation/upgrade package.
 	* Joomla! Official site: https://www.joomla.org
-	* Joomla! 5.3 version history - https://docs.joomla.org/Special:MyLanguage/Joomla_5.3_version_history
+	* Joomla! 5.4 version history - https://docs.joomla.org/Special:MyLanguage/Joomla_5.4_version_history
 	* Detailed changes in the Changelog: https://github.com/joomla/joomla-cms/commits/5.3-dev
 
 2- What is Joomla?
