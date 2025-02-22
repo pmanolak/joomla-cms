@@ -498,7 +498,7 @@ abstract class CMSApplication extends WebApplication implements ContainerAwareIn
                 Log::WARNING,
                 'deprecated'
             );
-        } catch (\RuntimeException $exception) {
+        } catch (\RuntimeException) {
             // Informational log only
         }
 

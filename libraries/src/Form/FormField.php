@@ -1217,7 +1217,7 @@ abstract class FormField implements DatabaseAwareInterface, CurrentUserInterface
             if ($rule instanceof DatabaseAwareInterface) {
                 try {
                     $rule->setDatabase($this->getDatabase());
-                } catch (DatabaseNotFoundException $e) {
+                } catch (DatabaseNotFoundException) {
                     @trigger_error(\sprintf('Database must be set, this will not be caught anymore in 5.0.'), E_USER_DEPRECATED);
                     $rule->setDatabase(Factory::getContainer()->get(DatabaseInterface::class));
                 }
@@ -1242,7 +1242,7 @@ abstract class FormField implements DatabaseAwareInterface, CurrentUserInterface
             if ($rule instanceof DatabaseAwareInterface) {
                 try {
                     $rule->setDatabase($this->getDatabase());
-                } catch (DatabaseNotFoundException $e) {
+                } catch (DatabaseNotFoundException) {
                     @trigger_error(\sprintf('Database must be set, this will not be caught anymore in 5.0.'), E_USER_DEPRECATED);
                     $rule->setDatabase(Factory::getContainer()->get(DatabaseInterface::class));
                 }

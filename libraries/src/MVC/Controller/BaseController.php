@@ -690,7 +690,7 @@ class BaseController implements ControllerInterface, DispatcherAwareInterface, L
                 /** @var \Joomla\CMS\Cache\Controller\ViewController $cache */
                 $cache = Factory::getCache($option, 'view');
                 $cache->get($view, 'display');
-            } catch (CacheExceptionInterface $exception) {
+            } catch (CacheExceptionInterface) {
                 $view->display();
             }
         } else {

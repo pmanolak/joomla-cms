@@ -194,7 +194,7 @@ class TagsHelper extends CMSHelper
 
                 try {
                     $aliasesMapper = $db->loadAssocList('alias');
-                } catch (\RuntimeException $e) {
+                } catch (\RuntimeException) {
                     return false;
                 }
 
@@ -1001,7 +1001,7 @@ class TagsHelper extends CMSHelper
 
         try {
             $results = $db->loadObjectList();
-        } catch (\RuntimeException $e) {
+        } catch (\RuntimeException) {
             return [];
         }
 

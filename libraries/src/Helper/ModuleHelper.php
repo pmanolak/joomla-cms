@@ -334,7 +334,7 @@ abstract class ModuleHelper
             $tPath = Path::check(JPATH_THEMES . '/' . $template . '/html/' . $module . '/' . $layout . '.php');
             $iPath = Path::check(JPATH_THEMES . '/' . $templateObj->parent . '/html/' . $module . '/' . $layout . '.php');
             $bPath = Path::check(JPATH_BASE . '/modules/' . $module . '/tmpl/' . $defaultLayout . '.php');
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             // On error fallback to the default path
             return $dPath;
         }

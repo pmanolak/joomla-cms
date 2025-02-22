@@ -82,7 +82,7 @@ trait FormBehaviorTrait
 
         try {
             $formFactory = $this->getFormFactory();
-        } catch (\UnexpectedValueException $e) {
+        } catch (\UnexpectedValueException) {
             $formFactory = Factory::getContainer()->get(FormFactoryInterface::class);
         }
 

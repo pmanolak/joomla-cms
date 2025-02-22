@@ -103,7 +103,7 @@ class MediaHelper
                 $mime  = finfo_file($finfo, $file);
                 finfo_close($finfo);
             }
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             // If we have any kind of error here => false;
             return false;
         }

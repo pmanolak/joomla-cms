@@ -601,7 +601,7 @@ class Form implements CurrentUserInterface
         if (\is_string($data)) {
             try {
                 $data = new \SimpleXMLElement($data);
-            } catch (\Exception $e) {
+            } catch (\Exception) {
                 return false;
             }
         }
@@ -1465,7 +1465,7 @@ class Form implements CurrentUserInterface
         if ($field instanceof DatabaseAwareInterface) {
             try {
                 $field->setDatabase($this->getDatabase());
-            } catch (DatabaseNotFoundException $e) {
+            } catch (DatabaseNotFoundException) {
                 @trigger_error(\sprintf('Database must be set, this will not be caught anymore in 5.0.'), E_USER_DEPRECATED);
                 $field->setDatabase(Factory::getContainer()->get(DatabaseInterface::class));
             }

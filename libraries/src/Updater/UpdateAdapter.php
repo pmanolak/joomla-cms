@@ -164,7 +164,7 @@ abstract class UpdateAdapter extends AdapterInstance
 
         try {
             $db->execute();
-        } catch (\RuntimeException $e) {
+        } catch (\RuntimeException) {
             // Do nothing
         }
     }
@@ -196,7 +196,7 @@ abstract class UpdateAdapter extends AdapterInstance
 
         try {
             $name = $db->loadResult();
-        } catch (\RuntimeException $e) {
+        } catch (\RuntimeException) {
             // Do nothing
         }
 
@@ -262,7 +262,7 @@ abstract class UpdateAdapter extends AdapterInstance
         try {
             $http     = HttpFactory::getHttp($httpOption);
             $response = $http->get($url, $headers, 20);
-        } catch (\RuntimeException $e) {
+        } catch (\RuntimeException) {
             $response = null;
         }
 

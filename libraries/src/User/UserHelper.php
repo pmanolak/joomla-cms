@@ -648,7 +648,7 @@ abstract class UserHelper
                     ->delete($db->quoteName('#__session'))
                     ->whereIn($db->quoteName('session_id'), $sessionIds, ParameterType::LARGE_OBJECT)
             )->execute();
-        } catch (ExecutionFailureException $e) {
+        } catch (ExecutionFailureException) {
             // No issue, let things go
         }
 

@@ -209,7 +209,7 @@ class TagField extends ListField
 
                 try {
                     $options = $db->loadObjectList();
-                } catch (\RuntimeException $e) {
+                } catch (\RuntimeException) {
                     return [];
                 }
 
@@ -232,7 +232,7 @@ class TagField extends ListField
 
             try {
                 $options = array_merge($options, $db->loadObjectList());
-            } catch (\RuntimeException $e) {
+            } catch (\RuntimeException) {
                 return [];
             }
         }

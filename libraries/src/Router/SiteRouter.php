@@ -138,7 +138,7 @@ class SiteRouter extends Router
          */
         try {
             $baseUri = Uri::base(true);
-        } catch (\RuntimeException $e) {
+        } catch (\RuntimeException) {
             $baseUri = '';
         }
 

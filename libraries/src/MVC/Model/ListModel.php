@@ -429,7 +429,7 @@ class ListModel extends BaseDatabaseModel implements FormFactoryAwareInterface, 
         try {
             // Get the form.
             return $this->loadForm($this->context . '.filter', $this->filterFormName, ['control' => '', 'load_data' => $loadData]);
-        } catch (\RuntimeException $e) {
+        } catch (\RuntimeException) {
         }
 
         return null;

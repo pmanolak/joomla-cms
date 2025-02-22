@@ -129,7 +129,7 @@ class RedisStorage extends CacheStorage
 
         try {
             static::$_redis->ping();
-        } catch (\RedisException $e) {
+        } catch (\RedisException) {
             static::$_redis = null;
 
             throw new CacheConnectingException('Redis ping failed', 500);

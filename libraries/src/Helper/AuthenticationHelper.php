@@ -93,7 +93,7 @@ abstract class AuthenticationHelper
             // Get all the User plugins.
             $dispatcher = Factory::getApplication()->getDispatcher();
             PluginHelper::importPlugin('user', null, true, $dispatcher);
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             return [];
         }
 
