@@ -233,7 +233,7 @@ final class MetadataManager
         $sessionId   = $session->getId();
         $userIsGuest = $user->guest;
         $userId      = $user->id;
-        $username    = $user->username === null ? '' : $user->username;
+        $username    = $user->username ?? '';
 
         $query->bind(':session_id', $sessionId)
             ->bind(':guest', $userIsGuest, ParameterType::INTEGER)
@@ -290,7 +290,7 @@ final class MetadataManager
         $sessionId   = $session->getId();
         $userIsGuest = $user->guest;
         $userId      = $user->id;
-        $username    = $user->username === null ? '' : $user->username;
+        $username    = $user->username ?? '';
 
         $query->bind(':session_id', $sessionId)
             ->bind(':guest', $userIsGuest, ParameterType::INTEGER)
