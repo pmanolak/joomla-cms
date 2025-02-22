@@ -646,7 +646,7 @@ class ListModel extends BaseDatabaseModel implements FormFactoryAwareInterface, 
         $new_state = $input->get($request, null, $type);
 
         // BC for Search Tools which uses different naming
-        if ($new_state === null && strpos($request, 'filter_') === 0) {
+        if ($new_state === null && str_starts_with($request, 'filter_')) {
             $name    = substr($request, 7);
             $filters = $app->getInput()->get('filter', [], 'array');
 

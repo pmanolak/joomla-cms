@@ -1705,7 +1705,7 @@ class Form implements CurrentUserInterface
             $forms[$name] = Factory::getContainer()->get(FormFactoryInterface::class)->createForm($name, $options);
 
             // Load the data.
-            if (substr($data, 0, 1) === '<') {
+            if (str_starts_with($data, '<')) {
                 if ($forms[$name]->load($data, $replace, $xpath) == false) {
                     throw new \RuntimeException(\sprintf('%s() could not load form', __METHOD__));
                 }

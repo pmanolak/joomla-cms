@@ -750,7 +750,7 @@ class BaseController implements ControllerInterface, DispatcherAwareInterface, L
         if (!$prefix) {
             if ($this->factory instanceof LegacyFactory) {
                 $prefix = $this->model_prefix;
-            } elseif (!empty($config['base_path']) && strpos(Path::clean($config['base_path']), JPATH_ADMINISTRATOR) === 0) {
+            } elseif (!empty($config['base_path']) && str_starts_with(Path::clean($config['base_path']), JPATH_ADMINISTRATOR)) {
                 // When the frontend uses an administrator model
                 $prefix = 'Administrator';
             } else {
@@ -861,7 +861,7 @@ class BaseController implements ControllerInterface, DispatcherAwareInterface, L
         if (!$prefix) {
             if ($this->factory instanceof LegacyFactory) {
                 $prefix = $this->getName() . 'View';
-            } elseif (!empty($config['base_path']) && strpos(Path::clean($config['base_path']), JPATH_ADMINISTRATOR) === 0) {
+            } elseif (!empty($config['base_path']) && str_starts_with(Path::clean($config['base_path']), JPATH_ADMINISTRATOR)) {
                 // When the front uses an administrator view
                 $prefix = 'Administrator';
             } else {

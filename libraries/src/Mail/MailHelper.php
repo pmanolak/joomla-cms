@@ -173,7 +173,7 @@ abstract class MailHelper
             }
 
             // Check for a dash at the beginning of the domain
-            if (strpos($domain, '-') === 0) {
+            if (str_starts_with($domain, '-')) {
                 return false;
             }
 

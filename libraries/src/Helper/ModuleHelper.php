@@ -63,7 +63,7 @@ abstract class ModuleHelper
         }
 
         // If we didn't find it, and the name is mod_something, create a dummy object
-        if ($result === null && strpos($name, 'mod_') === 0) {
+        if ($result === null && str_starts_with($name, 'mod_')) {
             $result         = static::createDummyModule();
             $result->module = $name;
         }
