@@ -76,7 +76,7 @@ $config
             // Arrays on multiline should have a trailing comma
             'trailing_comma_in_multiline'                      => ['elements' => ['arrays']],
             // Align elements in multiline array and variable declarations on new lines below each other
-            'binary_operator_spaces'                           => ['operators' => ['=>' => 'align_single_space_minimal', '=' => 'align']],
+            'binary_operator_spaces'                           => ['operators' => ['=>' => 'align_single_space_minimal', '=' => 'align', '??=' => 'align']],
             // The "No break" comment in switch statements
             'no_break_comment'                                 => ['comment_text' => 'No break'],
             // Remove unused imports
