@@ -1487,7 +1487,7 @@ class Form implements CurrentUserInterface
          * else the value of the 'default' attribute for the field.
          */
         if ($value === null) {
-            $default = (string) ($element['default'] ? $element['default'] : $element->default);
+            $default = (string) ($element['default'] ?: $element->default);
 
             if (($translate = $element['translate_default']) && ((string) $translate === 'true' || (string) $translate === '1')) {
                 $lang = Factory::getLanguage();
