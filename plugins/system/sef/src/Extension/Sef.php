@@ -334,7 +334,7 @@ final class Sef extends CMSPlugin implements SubscriberInterface
         $origUri = Uri::getInstance();
         $route   = $origUri->getPath();
 
-        if (substr($route, -9) === 'index.php' || substr($route, -1) === '/') {
+        if (str_ends_with($route, 'index.php') || str_ends_with($route, '/')) {
             // We don't want suffixes when the URL ends in index.php or with a /
             return;
         }
@@ -375,7 +375,7 @@ final class Sef extends CMSPlugin implements SubscriberInterface
     {
         $origUri = Uri::getInstance();
 
-        if (substr($origUri->getPath(), -9) === 'index.php') {
+        if (str_ends_with($origUri->getPath(), 'index.php')) {
             // Remove trailing index.php
             $origUri->setPath(substr($origUri->getPath(), 0, -9));
             $this->getApplication()->redirect($origUri->toString(), 301);
