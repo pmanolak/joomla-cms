@@ -149,7 +149,7 @@ final class Token extends CMSPlugin implements SubscriberInterface
         // The token is a base64 encoded string. Make sure we can decode it.
         $authString = @base64_decode($tokenString);
 
-        if (empty($authString) || (strpos($authString, ':') === false)) {
+        if (empty($authString) || (!str_contains($authString, ':'))) {
             return;
         }
 

@@ -366,7 +366,7 @@ final class Debug extends CMSPlugin implements SubscriberInterface
         // No debug for Safari and Chrome redirection.
         if (
             str_starts_with($contents, '<html><head><meta http-equiv="refresh" content="0;')
-            && strpos(strtolower($_SERVER['HTTP_USER_AGENT'] ?? ''), 'webkit') !== false
+            && str_contains(strtolower($_SERVER['HTTP_USER_AGENT'] ?? ''), 'webkit')
         ) {
             $this->debugBar->stackData();
 
@@ -688,13 +688,13 @@ final class Debug extends CMSPlugin implements SubscriberInterface
             }
 
             // Collect the module render time
-            if (strpos($mark->label, 'mod_') !== false) {
+            if (str_contains($mark->label, 'mod_')) {
                 $moduleTime += $mark->time;
                 continue;
             }
 
             // Collect the access render time
-            if (strpos($mark->label, 'Access:') !== false) {
+            if (str_contains($mark->label, 'Access:')) {
                 $accessTime += $mark->time;
                 continue;
             }

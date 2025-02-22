@@ -205,7 +205,7 @@ trait DisplayTrait
              * If URL, just pass it to $content_css
              * else, assume it is a file name in the current template folder
              */
-            $content_css = strpos($content_css_custom, 'http') !== false
+            $content_css = str_contains($content_css_custom, 'http')
                 ? $content_css_custom
                 : $this->includeRelativeFiles('css', $content_css_custom);
         } else {
@@ -383,11 +383,11 @@ trait DisplayTrait
         $custom_button = trim($levelParams->get('custom_button', ''));
 
         if ($custom_plugin) {
-            $plugins   = array_merge($plugins, explode(strpos($custom_plugin, ',') !== false ? ',' : ' ', $custom_plugin));
+            $plugins   = array_merge($plugins, explode(str_contains($custom_plugin, ',') ? ',' : ' ', $custom_plugin));
         }
 
         if ($custom_button) {
-            $toolbar1  = array_merge($toolbar1, explode(strpos($custom_button, ',') !== false ? ',' : ' ', $custom_button));
+            $toolbar1  = array_merge($toolbar1, explode(str_contains($custom_button, ',') ? ',' : ' ', $custom_button));
         }
 
         // Merge the two toolbars for backwards compatibility

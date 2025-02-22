@@ -327,7 +327,7 @@ final class Httpheaders extends CMSPlugin implements SubscriberInterface
                 if (
                     $strictDynamicEnabled
                     && $cspValue->directive === 'script-src'
-                    && strpos($cspValue->value, 'strict-dynamic') === false
+                    && !str_contains($cspValue->value, 'strict-dynamic')
                 ) {
                     $cspValue->value = "'strict-dynamic' " . $cspValue->value;
                 }
