@@ -196,7 +196,7 @@ abstract class StringHelper
 
         // If the plain text is shorter than the max length the variable will not end in ...
         // In that case we use the whole string.
-        if (substr($ptString, -3) !== '...') {
+        if (!str_ends_with($ptString, '...')) {
             return $html;
         }
 
