@@ -300,7 +300,7 @@ class BaseController implements ControllerInterface, DispatcherAwareInterface, L
         }
 
         // Check for a controller.task command.
-        if (strpos($command, '.') !== false) {
+        if (str_contains($command, '.')) {
             // Explode the controller.task command.
             list($type, $task) = explode('.', $command);
 

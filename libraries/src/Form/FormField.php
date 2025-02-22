@@ -1094,7 +1094,7 @@ abstract class FormField implements DatabaseAwareInterface, CurrentUserInterface
             }
 
             // Check for a callback filter
-            if (strpos($filter, '::') !== false) {
+            if (str_contains($filter, '::')) {
                 if (\is_callable(explode('::', $filter))) {
                     return \call_user_func(explode('::', $filter), $value);
                 }

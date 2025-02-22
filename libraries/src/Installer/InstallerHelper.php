@@ -290,7 +290,7 @@ abstract class InstallerHelper
     {
         $default = uniqid();
 
-        if (!\is_string($url) || strpos($url, '/') === false) {
+        if (!\is_string($url) || !str_contains($url, '/')) {
             return $default;
         }
 

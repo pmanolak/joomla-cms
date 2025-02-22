@@ -202,7 +202,7 @@ abstract class MailHelper
         $siteUrl = Uri::root();
 
         // Replace none SEF URLs by absolute SEF URLs
-        if (strpos($content, 'href="index.php?') !== false) {
+        if (str_contains($content, 'href="index.php?')) {
             preg_match_all('#href="index.php\?([^"]+)"#m', $content, $matches);
 
             foreach ($matches[1] as $urlQueryString) {
@@ -221,7 +221,7 @@ abstract class MailHelper
         $attributes = ['href=', 'src=', 'poster=', 'loading=', 'data-path='];
 
         foreach ($attributes as $attribute) {
-            if (strpos($content, $attribute) !== false) {
+            if (str_contains($content, $attribute)) {
                 // If the attribute is 'loading=', remove loading="lazy"
                 if ($attribute === 'loading=') {
                     $content = preg_replace('/\s' . $attribute . '"lazy"/i', '', $content);

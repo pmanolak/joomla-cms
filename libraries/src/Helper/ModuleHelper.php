@@ -319,7 +319,7 @@ abstract class ModuleHelper
         $defaultLayout = $layout;
         $template      = $templateObj->template;
 
-        if (strpos($layout, ':') !== false) {
+        if (str_contains($layout, ':')) {
             // Get the template and file name from the string
             $temp          = explode(':', $layout);
             $template      = $temp[0] === '_' ? $template : $temp[0];

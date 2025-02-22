@@ -153,7 +153,7 @@ class TagField extends ListField
             }
         } elseif (!empty($this->element['language'])) {
             // Filter language
-            if (strpos($this->element['language'], ',') !== false) {
+            if (str_contains($this->element['language'], ',')) {
                 $language = explode(',', $this->element['language']);
             } else {
                 $language = [$this->element['language']];

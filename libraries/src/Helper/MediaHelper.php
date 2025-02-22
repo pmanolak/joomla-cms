@@ -385,7 +385,7 @@ class MediaHelper
             $d = dir($dir);
 
             while (($entry = $d->read()) !== false) {
-                if ($entry[0] !== '.' && strpos($entry, '.html') === false && strpos($entry, '.php') === false && is_file($dir . DIRECTORY_SEPARATOR . $entry)) {
+                if ($entry[0] !== '.' && !str_contains($entry, '.html') && !str_contains($entry, '.php') && is_file($dir . DIRECTORY_SEPARATOR . $entry)) {
                     $total_file++;
                 }
 

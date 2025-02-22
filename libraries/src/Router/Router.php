@@ -469,7 +469,7 @@ class Router
         if (\is_string($url)) {
             $vars = [];
 
-            if (strpos($url, '&amp;') !== false) {
+            if (str_contains($url, '&amp;')) {
                 $url = str_replace('&amp;', '&', $url);
             }
 
