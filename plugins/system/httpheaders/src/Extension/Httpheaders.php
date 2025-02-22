@@ -310,12 +310,12 @@ final class Httpheaders extends CMSPlugin implements SubscriberInterface
                 }
 
                 // Append the script hashes placeholder
-                if ($scriptHashesEnabled && strpos($cspValue->directive, 'script-src') === 0) {
+                if ($scriptHashesEnabled && str_starts_with($cspValue->directive, 'script-src')) {
                     $cspValue->value = '{script-hashes} ' . $cspValue->value;
                 }
 
                 // Append the style hashes placeholder
-                if ($styleHashesEnabled && strpos($cspValue->directive, 'style-src') === 0) {
+                if ($styleHashesEnabled && str_starts_with($cspValue->directive, 'style-src')) {
                     $cspValue->value = '{style-hashes} ' . $cspValue->value;
                 }
 

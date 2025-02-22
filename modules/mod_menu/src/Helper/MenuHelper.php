@@ -125,7 +125,7 @@ class MenuHelper
                             break;
 
                         case 'url':
-                            if ((strpos($item->link, 'index.php?') === 0) && (strpos($item->link, 'Itemid=') === false)) {
+                            if ((str_starts_with($item->link, 'index.php?')) && (strpos($item->link, 'Itemid=') === false)) {
                                 // If this is an internal Joomla link, ensure the Itemid is set.
                                 $item->flink = $item->link . '&Itemid=' . $item->id;
                             }

@@ -365,7 +365,7 @@ final class Debug extends CMSPlugin implements SubscriberInterface
 
         // No debug for Safari and Chrome redirection.
         if (
-            strpos($contents, '<html><head><meta http-equiv="refresh" content="0;') === 0
+            str_starts_with($contents, '<html><head><meta http-equiv="refresh" content="0;')
             && strpos(strtolower($_SERVER['HTTP_USER_AGENT'] ?? ''), 'webkit') !== false
         ) {
             $this->debugBar->stackData();
@@ -619,7 +619,7 @@ final class Debug extends CMSPlugin implements SubscriberInterface
                     $category = $entry->category;
                     $relative = $file ? str_replace(JPATH_ROOT, '', $file) : '';
 
-                    if ($relative && 0 === strpos($relative, '/libraries/src')) {
+                    if ($relative && str_starts_with($relative, '/libraries/src')) {
                         if (!$logDeprecatedCore) {
                             break;
                         }
