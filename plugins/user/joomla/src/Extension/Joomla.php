@@ -51,7 +51,7 @@ final class Joomla extends CMSPlugin implements SubscriberInterface
      *
      * @return array
      *
-     * @since   __DEPLOY_VERSION__
+     * @since   5.3.0
      */
     public static function getSubscribedEvents(): array
     {
@@ -202,7 +202,7 @@ final class Joomla extends CMSPlugin implements SubscriberInterface
         }
 
         // Check if we have a sensible from email address, if not bail out as mail would not be sent anyway
-        if (strpos($app->get('mailfrom'), '@') === false) {
+        if (!str_contains($app->get('mailfrom'), '@')) {
             $app->enqueueMessage($language->_('JERROR_SENDING_EMAIL'), 'warning');
 
             return;

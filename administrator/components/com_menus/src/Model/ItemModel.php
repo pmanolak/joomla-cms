@@ -579,10 +579,10 @@ class ItemModel extends AdminModel
         if (empty($data['id'])) {
             // Get selected fields
             $filters           = Factory::getApplication()->getUserState('com_menus.items.filter');
-            $data['parent_id'] = $data['parent_id'] ?? ($filters['parent_id'] ?? null);
-            $data['published'] = $data['published'] ?? ($filters['published'] ?? null);
-            $data['language']  = $data['language'] ?? ($filters['language'] ?? null);
-            $data['access']    = $data['access'] ?? ($filters['access'] ?? Factory::getApplication()->get('access'));
+            $data['parent_id'] ??= $filters['parent_id'] ?? null;
+            $data['published'] ??= $filters['published'] ?? null;
+            $data['language']  ??= $filters['language'] ?? null;
+            $data['access']    ??= $filters['access'] ?? Factory::getApplication()->get('access');
         }
 
         if (isset($data['menutype']) && !$this->getState('item.menutypeid')) {
