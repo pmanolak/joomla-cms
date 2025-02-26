@@ -160,8 +160,7 @@ final class LanguageFilter extends CMSPlugin implements SubscriberInterface
 
             foreach ($this->sefs as $sef => $language) {
                 if (!\array_key_exists($language->lang_code, LanguageHelper::getInstalledLanguages(0))) {
-                    unset($this->lang_codes[$language->lang_code]);
-                    unset($this->sefs[$language->sef]);
+                    unset($this->lang_codes[$language->lang_code], $this->sefs[$language->sef]);
                 }
             }
         }

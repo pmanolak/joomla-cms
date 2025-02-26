@@ -91,6 +91,8 @@ $config
             'native_function_invocation'                       => ['include' => ['@compiler_optimized']],
             // Adds null to type declarations when parameter have a default null value
             'nullable_type_declaration_for_default_null_value' => true,
+            // Calling unset on multiple items should be done in one call
+            'combine_consecutive_unsets'                       => true,
         ]
     )
     ->setFinder($finder);
