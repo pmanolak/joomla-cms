@@ -164,7 +164,7 @@ final class Joomla extends ActionLogPlugin implements SubscriberInterface
             return;
         }
 
-        list($option, $contentType) = explode('.', $params->type_alias);
+        [$option, $contentType] = explode('.', $params->type_alias);
 
         if (!$this->checkLoggable($option)) {
             return;
@@ -272,7 +272,7 @@ final class Joomla extends ActionLogPlugin implements SubscriberInterface
             return;
         }
 
-        list(, $contentType) = explode('.', $params->type_alias);
+        [, $contentType] = explode('.', $params->type_alias);
 
         switch ($value) {
             case 0:
@@ -544,7 +544,7 @@ final class Joomla extends ActionLogPlugin implements SubscriberInterface
             return;
         }
 
-        list(, $contentType) = explode('.', $params->type_alias);
+        [, $contentType] = explode('.', $params->type_alias);
 
         if ($isNew) {
             $messageLanguageKey = $params->text_prefix . '_' . $params->type_title . '_ADDED';

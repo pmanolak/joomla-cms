@@ -163,7 +163,7 @@ final class Token extends CMSPlugin implements SubscriberInterface
             return;
         }
 
-        list($algo, $userId, $tokenHMAC) = $parts;
+        [$algo, $userId, $tokenHMAC] = $parts;
 
         /**
          * Verify the HMAC algorithm requested in the token string is allowed
