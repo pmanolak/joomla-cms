@@ -114,7 +114,7 @@ class Globalcheckin extends CMSPlugin implements SubscriberInterface
 
             try {
                 $db->execute();
-            } catch (ExecutionFailureException $e) {
+            } catch (ExecutionFailureException) {
                 // This failure isn't critical, don't care too much
                 $failed = true;
             }

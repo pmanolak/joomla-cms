@@ -316,7 +316,7 @@ final class Joomla extends ActionLogPlugin implements SubscriberInterface
 
         try {
             $items = $db->loadObjectList($params->id_holder);
-        } catch (\RuntimeException $e) {
+        } catch (\RuntimeException) {
             $items = [];
         }
 
@@ -875,7 +875,7 @@ final class Joomla extends ActionLogPlugin implements SubscriberInterface
 
         try {
             $loggedInUser = $db->loadObject();
-        } catch (ExecutionFailureException $e) {
+        } catch (ExecutionFailureException) {
             return;
         }
 
