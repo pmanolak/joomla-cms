@@ -248,7 +248,7 @@ class HtmlView extends BaseHtmlView
     {
         $user = $this->getCurrentUser();
 
-        if (isset($this->typeName) && isset($this->extensionName)) {
+        if (isset($this->typeName, $this->extensionName)) {
             $helper = AssociationsHelper::getExtensionHelper($this->extensionName);
             $title  = $helper->getTypeTitle($this->typeName);
 
