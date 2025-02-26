@@ -133,7 +133,7 @@ class SetConfigurationCommand extends AbstractCommand
                 return false;
             }
 
-            list($option, $value) = explode('=', $option);
+            [$option, $value] = explode('=', $option);
 
             $collected[$option] = $value;
         }

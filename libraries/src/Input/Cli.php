@@ -112,7 +112,7 @@ class Cli extends Input
     public function unserialize($input)
     {
         // Unserialize the executable, args, options, data, and inputs.
-        list($this->executable, $this->args, $this->options, $this->data, $this->inputs) = unserialize($input);
+        [$this->executable, $this->args, $this->options, $this->data, $this->inputs] = unserialize($input);
 
         // Load the filter.
         if (isset($this->options['filter'])) {
