@@ -205,7 +205,7 @@ class SetConfigurationCommand extends AbstractCommand
      */
     public function getInitialConfigurationOptions(): Registry
     {
-        return (new Registry(new \JConfig()));
+        return new Registry(new \JConfig());
     }
 
 

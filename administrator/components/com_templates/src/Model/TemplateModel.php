@@ -701,7 +701,7 @@ class TemplateModel extends FormModel
             ->bind(':name', $name);
         $db->setQuery($query);
 
-        return ($db->loadResult() == 0);
+        return $db->loadResult() == 0;
     }
 
     /**

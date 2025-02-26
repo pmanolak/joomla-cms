@@ -593,7 +593,7 @@ class AssociationsHelper extends ContentHelper
 
         $userId = Factory::getUser()->id;
 
-        return ($item->{$checkedOutFieldName} == $userId || $item->{$checkedOutFieldName} == 0);
+        return $item->{$checkedOutFieldName} == $userId || $item->{$checkedOutFieldName} == 0;
     }
 
     /**
