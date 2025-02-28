@@ -229,7 +229,7 @@ class FieldModel extends AdminModel
          */
         if (
             $field && \in_array($field->type, ['list', 'checkboxes', 'radio'], true)
-            && isset($data['fieldparams']['options']) && isset($field->fieldparams['options'])
+            && isset($data['fieldparams']['options'], $field->fieldparams['options'])
         ) {
             $oldParams = $this->getParams($field->fieldparams['options']);
             $newParams = $this->getParams($data['fieldparams']['options']);
@@ -1168,6 +1168,16 @@ class FieldModel extends AdminModel
 
         foreach ($pks as $pk) {
             if ($user->authorise('core.create', $component . '.fieldgroup.' . $value)) {
+                // Find all assigned categories to this field
+                $db    = $this->getDatabase();
+                $query = $db->getQuery(true);
+
+                $query->select($db->quoteName('category_id'))
+                    ->from($db->quoteName('#__fields_categories'))
+                    ->where($db->quoteName('field_id') . ' = ' . (int) $pk);
+
+                $assignedCatIds = $db->setQuery($query)->loadColumn();
+
                 $table->reset();
                 $table->load($pk);
 
@@ -1193,6 +1203,17 @@ class FieldModel extends AdminModel
 
                 // Get the new item ID
                 $newId = $table->id;
+
+                // Inset the assigned categories
+                if (!empty($assignedCatIds)) {
+                    $tuple           = new \stdClass();
+                    $tuple->field_id = $newId;
+
+                    foreach ($assignedCatIds as $catId) {
+                        $tuple->category_id = $catId;
+                        $db->insertObject('#__fields_categories', $tuple);
+                    }
+                }
 
                 // Add the new ID to the array
                 $newIds[$pk] = $newId;
