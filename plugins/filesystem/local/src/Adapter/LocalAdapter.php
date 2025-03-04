@@ -513,6 +513,10 @@ class LocalAdapter implements AdapterInterface
             $destinationPath = $destinationPath . '/' . $this->getFileName($sourcePath);
         }
 
+        if (!MediaHelper::checkFileExtension(pathinfo($destinationPath, PATHINFO_EXTENSION))) {
+            throw new \Exception(Text::_('COM_MEDIA_MOVE_FILE_EXTENSION_INVALID'));
+        }
+
         if (file_exists($destinationPath) && !$force) {
             throw new \Exception('Copy file is not possible as destination file already exists');
         }
