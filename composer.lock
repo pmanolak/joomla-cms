@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3586da55843649b84080b5897310f06f",
+    "content-hash": "aea460a15f0d9c656441f03d58683ed5",
     "packages": [
         {
             "name": "algo26-matthias/idna-convert",
@@ -3098,16 +3098,16 @@
         },
         {
             "name": "php-tuf/php-tuf",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/joomla-backports/php-tuf.git",
-                "reference": "051750c097eaa1c3954e5f1f480f708260de5d47"
+                "reference": "1fc585dc5a090a4af94823e21470779f31030733"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/joomla-backports/php-tuf/zipball/051750c097eaa1c3954e5f1f480f708260de5d47",
-                "reference": "051750c097eaa1c3954e5f1f480f708260de5d47",
+                "url": "https://api.github.com/repos/joomla-backports/php-tuf/zipball/1fc585dc5a090a4af94823e21470779f31030733",
+                "reference": "1fc585dc5a090a4af94823e21470779f31030733",
                 "shasum": ""
             },
             "require": {
@@ -3168,7 +3168,7 @@
                 "MIT"
             ],
             "description": "PHP implementation of The Update Framework (TUF)",
-            "time": "2025-02-03T07:10:33+00:00"
+            "time": "2025-03-19T20:05:51+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
@@ -10175,9 +10175,9 @@
         "ext-gd": "*",
         "ext-dom": "*"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "platform-overrides": {
         "php": "8.1.0"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
