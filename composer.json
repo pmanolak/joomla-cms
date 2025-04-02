@@ -90,7 +90,7 @@
     "symfony/polyfill-mbstring": "^1.31.0",
     "symfony/web-link": "^6.4.13",
     "symfony/yaml": "^6.4.18",
-    "typo3/phar-stream-wrapper": "^4.0.0",
+    "typo3/phar-stream-wrapper": "^3.1.8",
     "wamania/php-stemmer": "^4.0.0",
     "tobscure/json-api": "dev-joomla-backports",
     "willdurand/negotiation": "^3.1.0",
