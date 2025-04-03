@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "706a42a51fe38ba6c7257d5c012f67d4",
+    "content-hash": "b5e7aa72f51928d53f3e4ceb930add12",
     "packages": [
         {
             "name": "algo26-matthias/idna-convert",
@@ -1475,16 +1475,16 @@
         },
         {
             "name": "joomla/database",
-            "version": "2.1.1",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/joomla-framework/database.git",
-                "reference": "7da995b798e22642c6642878096f496c62dbbe08"
+                "reference": "4886a900949f9422c3f441fa3434d1ba4beaff83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/joomla-framework/database/zipball/7da995b798e22642c6642878096f496c62dbbe08",
-                "reference": "7da995b798e22642c6642878096f496c62dbbe08",
+                "url": "https://api.github.com/repos/joomla-framework/database/zipball/4886a900949f9422c3f441fa3434d1ba4beaff83",
+                "reference": "4886a900949f9422c3f441fa3434d1ba4beaff83",
                 "shasum": ""
             },
             "require": {
@@ -1539,7 +1539,7 @@
             ],
             "support": {
                 "issues": "https://github.com/joomla-framework/database/issues",
-                "source": "https://github.com/joomla-framework/database/tree/2.1.1"
+                "source": "https://github.com/joomla-framework/database/tree/2.2.0"
             },
             "funding": [
                 {
@@ -1551,7 +1551,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-08-20T08:59:29+00:00"
+            "time": "2025-03-30T18:57:24+00:00"
         },
         {
             "name": "joomla/di",
