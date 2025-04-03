@@ -740,6 +740,11 @@ class User extends CMSObject
                 }
             }
 
+            // Unset the activation token, if the mail address changes - that affects both, activation and PW resets
+            if ($this->email !== $oldUser->email && $this->id !== 0 && !empty($this->activation) && !$this->block) {
+                $table->activation = '';
+            }
+
             // Fire the onUserBeforeSave event.
             PluginHelper::importPlugin('user');
 
