@@ -51,7 +51,7 @@
     "joomla/console": "^2.0.1",
     "joomla/crypt": "^2.0.1",
     "joomla/data": "^2.0.1",
-    "joomla/database": "^2.2.0",
+    "joomla/database": "^2.2.1",
     "joomla/di": "^2.0.1",
     "joomla/event": "^2.0.2",
     "joomla/filter": "^2.0.5",
