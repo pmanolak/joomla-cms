@@ -11479,7 +11479,7 @@ parameters:
 		-
 			message: '''
 				#^Call to deprecated method _load\(\) of class Joomla\\CMS\\Captcha\\Captcha\:
-				Should use CaptchaRegistry$#
+				Should use CaptchaRegistry\. Will be removed in 7\.0\.$#
 			'''
 			identifier: method.deprecated
 			count: 1
