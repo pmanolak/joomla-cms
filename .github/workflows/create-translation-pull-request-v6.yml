@@ -1,18 +1,18 @@
-name: Create translation pull request J5
+name: Create translation pull request J6
 
 on:
   push:
-    branches: [ translation5 ]
+    branches: [ translation6 ]
 
   workflow_dispatch:
 
   schedule:
-    # Run daily at 7:32
-    - cron:  '32 7 * * *'
+    # Run daily at 7:37
+    - cron:  '37 7 * * *'
 
 env:
-  JOOMLA_MAJOR_VERSION: 5
-  JOOMLA_MINOR_VERSION: 5.4
+  JOOMLA_MAJOR_VERSION: 6
+  JOOMLA_MINOR_VERSION: 6.0
 
 permissions:
   contents: read
@@ -23,13 +23,13 @@ jobs:
       contents: write  # for Git to git push
     runs-on: ubuntu-latest
     # Only run this action the translation-bot repository in the relevant translation branch
-    if: ${{ github.repository == 'joomla-translation-bot/joomla-cms' && github.ref == 'refs/heads/translation5'
+    if: ${{ github.repository == 'joomla-translation-bot/joomla-cms' && github.ref == 'refs/heads/translation6'
 
     steps:
       - uses: actions/checkout@v3
         # We need the full depth to create / update the pull request against the main repo
         with:
-          ref: translation5
+          ref: translation6
           fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
@@ -41,7 +41,7 @@ jobs:
           git config user.email release+translation-bot@joomla.org
           git remote add upstream https://github.com/joomla/joomla-cms.git
           git fetch upstream
-          git checkout --progress --force -B translation5 refs/remotes/origin/translation5
+          git checkout --progress --force -B translation6 refs/remotes/origin/translation6
           git merge upstream/${{ env.JOOMLA_MINOR_VERSION }}-dev
 
       - name: Fetch and extract translations
