@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb4d6cde1886d554211c2e47e0baa723",
+    "content-hash": "ea278e652d7d01e186ad20e25ba0fcff",
     "packages": [
         {
             "name": "algo26-matthias/idna-convert",
@@ -1779,16 +1779,16 @@
         },
         {
             "name": "joomla/filter",
-            "version": "3.0.2",
+            "version": "dev-3.x-tabsinattributes",
             "source": {
                 "type": "git",
-                "url": "https://github.com/joomla-framework/filter.git",
-                "reference": "0dac6380db52a3d72124c422060bd8b2a56015fe"
+                "url": "git@github.com:joomla-framework/security-filter.git",
+                "reference": "188dd3fccd6fa0532d105a52736affdf6b166217"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/joomla-framework/filter/zipball/0dac6380db52a3d72124c422060bd8b2a56015fe",
-                "reference": "0dac6380db52a3d72124c422060bd8b2a56015fe",
+                "url": "https://api.github.com/repos/joomla-framework/security-filter/zipball/188dd3fccd6fa0532d105a52736affdf6b166217",
+                "reference": "188dd3fccd6fa0532d105a52736affdf6b166217",
                 "shasum": ""
             },
             "require": {
@@ -1797,8 +1797,8 @@
             },
             "require-dev": {
                 "joomla/language": "^3.0",
-                "phan/phan": "^5.4.2",
-                "phpstan/phpstan": "^1.10.7",
+                "phpstan/phpstan": "1.12.27",
+                "phpstan/phpstan-deprecation-rules": "1.2.1",
                 "phpunit/phpunit": "^9.5.28",
                 "squizlabs/php_codesniffer": "^3.7.2"
             },
@@ -1817,7 +1817,11 @@
                     "Joomla\\Filter\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Joomla\\Filter\\Tests\\": "Tests/"
+                }
+            },
             "license": [
                 "GPL-2.0-or-later"
             ],
@@ -1829,20 +1833,20 @@
                 "joomla"
             ],
             "support": {
-                "issues": "https://github.com/joomla-framework/filter/issues",
-                "source": "https://github.com/joomla-framework/filter/tree/3.0.2"
+                "source": "https://github.com/joomla-framework/security-filter/tree/3.x-tabsinattributes",
+                "issues": "https://github.com/joomla-framework/security-filter/issues"
             },
             "funding": [
                 {
-                    "url": "https://community.joomla.org/sponsorship-campaigns.html",
-                    "type": "custom"
+                    "type": "github",
+                    "url": "https://github.com/joomla"
                 },
                 {
-                    "url": "https://github.com/joomla",
-                    "type": "github"
+                    "type": "custom",
+                    "url": "https://community.joomla.org/sponsorship-campaigns.html"
                 }
             ],
-            "time": "2024-08-20T15:37:54+00:00"
+            "time": "2025-08-05T09:18:04+00:00"
         },
         {
             "name": "joomla/http",
@@ -10134,6 +10138,12 @@
     ],
     "aliases": [
         {
+            "package": "joomla/filter",
+            "version": "dev-3.x-tabsinattributes",
+            "alias": "3.0.5",
+            "alias_normalized": "3.0.5.0"
+        },
+        {
             "package": "voku/portable-utf8",
             "version": "dev-joomla-5.3",
             "alias": "6.0.13",
@@ -10142,6 +10152,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
+        "joomla/filter": 20,
         "tobscure/json-api": 20,
         "voku/portable-utf8": 20
     },
