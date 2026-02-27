@@ -27,7 +27,7 @@ body:
         - 6.0
         - 6.1
         - 6.2
-      default: 5.4
+      default: 0
     validations:
       required: true
   - type: textarea
@@ -41,17 +41,14 @@ body:
     attributes:
       label: Actual result
       description: Tell us detailed the current behaviour
-      value: ""
   - type: textarea
     id: system-information
     attributes:
       label: System Information
       description: Please copy and paste all relevant system information. You can find them in your backend under "System => System Information"
-      value: ""
   - type: textarea
     id: additional-comments
     attributes:
       label: Additional Comments
       description: Additional comments which are important to find the issue
-      value: ""
 
